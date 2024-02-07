@@ -46,7 +46,7 @@ struct Converter {
     static_assert(!detail::is_same<T, char*>::value,
                   "type 'char*' is not supported, use 'const char*' instead");
 
-    T dummy = T();
+    T dummy {};
     // clang-format off
     return canConvertFromJson(src, dummy);  // Error here? See https://arduinojson.org/v7/unsupported-is/
     // clang-format on
